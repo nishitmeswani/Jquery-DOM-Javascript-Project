@@ -94,8 +94,8 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
+  font-size: 20px;
+  color: black;
   line-height: 28px;
 }
 
@@ -129,7 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: grey;
 }
 
 .flex-box {
