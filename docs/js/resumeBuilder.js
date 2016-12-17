@@ -23,6 +23,11 @@ bio.display = function() {
     $("#header").append(formattedRole);
     $("#topContacts, #footerContacts").append(formattedNo);
 
+    var formattedGit = HTMLgithub.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedGit);
+    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.contacts.github);
+    $("#header").append(formattedWelcome);
+
     var formattedNo = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#header").append(formattedNo);
     $("#footerContacts").append(formattedNo);
