@@ -1,6 +1,6 @@
-var skills = ["HTML", "CSS", "Javascript"];
+
 var img = new Image();
-img.src = "images/me.jpg";
+
 var bio = {
     "name": "Nishit Meswani",
     "role": "Front End Wen Developer",
@@ -10,17 +10,18 @@ var bio = {
         "github": "nishitmeswani",
         "location": "Mumbai"
     },
-    "biopic": img,
+    "biopic": "images/me.jpg",
     /*biopic have image instead of a string*/
 
     "welcomeMessage": "hey",
-    "skills": skills
+    "skills": ["HTML", "CSS", "Javascript"]
 };
 bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     $("#header").append(formattedName);
     $("#header").append(formattedRole);
+    $("#topContacts, #footerContacts").append(formattedNo);
 
     var formattedNo = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#header").append(formattedNo);
@@ -31,7 +32,7 @@ bio.display = function() {
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#header").append(formattedLocation);
     $("#footerContacts").append(formattedLocation);
-    var formattedImg = HTMLbioPic.replace("%data%", "images/me.jpg");
+    var formattedImg = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedImg);
 
 
@@ -114,6 +115,7 @@ var education = {
 
 };
 education.display = function() {
+    $("#education").append(HTMLschoolStart);
     for (i = 0; i < education.schools.length; i++) {
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
         $("#education").append(formattedSchoolName);
@@ -127,8 +129,7 @@ education.display = function() {
         $("#education").append(formattedSchoolUrl);
 
 
-        var length = 1;
-        for (var j = 0; j < length; j++) {
+        for (var j = 0; j < education.schools[i].majors.length; j++) {
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
             $("#education").append(formattedSchoolMajor);
         }
@@ -190,10 +191,9 @@ projects.display = function() {
         $(".project-entry:last").append(formattedDates);
 
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[k].description);
-        var length = 1;
         $(".project-entry:last").append(formattedDescription);
-        for (j = 0; j < length; j++) {
-            var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[k].images);
+        for (j = 0; j <  projects.projects[k].images.length; j++) {
+            var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[k].images[j]);
             $(".project-entry:last").append(formattedImage);
         }
 
