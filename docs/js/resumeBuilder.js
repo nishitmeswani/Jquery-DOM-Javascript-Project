@@ -66,7 +66,7 @@ var work = {
 
 
 work.display = function() {
-  for (i = 0; i < work.jobs.length; i++){
+    for (i = 0; i < work.jobs.length; i++) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmp = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
         var formattedTittle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
@@ -84,69 +84,69 @@ work.display = function() {
 work.display();
 var education = {
     "schools": [{
-           "name": "NMIMS",
-           "location":"India Mumbai",
-           "degree":"Engineering",
-           "majors":["Computer Science"],
-           "dates":"2014-2018",
-           "url": "nmims.edu"
-           },{
-            "name": "NMIMS",
-           "location":"India Mumbai",
-           "degree":"Engineering",
-           "majors":["Computer Science"],
-           "dates":"2014-2018",
-           "url": "nmims.edu"
+        "name": "NMIMS",
+        "location": "India Mumbai",
+        "degree": "Engineering",
+        "majors": ["Computer Science"],
+        "dates": "2014-2018",
+        "url": "nmims.edu"
+    }, {
+        "name": "NMIMS",
+        "location": "India Mumbai",
+        "degree": "Engineering",
+        "majors": ["Computer Science"],
+        "dates": "2014-2018",
+        "url": "nmims.edu"
 
-           }],
-      "onlineCourses": [{
-           "title": "Front End Webdevlopment",
-           "school": "udacity",
-           "dates":"December 2016",
-           "url":"udacity.com"
-       },{
+    }],
+    "onlineCourses": [{
         "title": "Front End Webdevlopment",
-           "school": "udacity",
-           "dates":"December 2016",
-           "url":"udacity.com"
+        "school": "udacity",
+        "dates": "December 2016",
+        "url": "udacity.com"
+    }, {
+        "title": "Front End Webdevlopment",
+        "school": "udacity",
+        "dates": "December 2016",
+        "url": "udacity.com"
 
-       }]
+    }]
 
 };
 education.display = function() {
-    for (i = 0; i < education.schools.length; i++){
-    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
-    $("#education").append(formattedSchoolName);
-    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
-    $("#education").append(formattedSchoolLocation);
-    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-    $("#education").append(formattedSchoolDegree);
-    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
-    $("#education").append(formattedSchoolDates);
-    var formattedSchoolUrl = HTMLonlineURL.replace("%data%", education.schools[i].url);
-    $("#education").append(formattedSchoolUrl);
+    for (i = 0; i < education.schools.length; i++) {
+        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
+        $("#education").append(formattedSchoolName);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+        $("#education").append(formattedSchoolLocation);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+        $("#education").append(formattedSchoolDegree);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+        $("#education").append(formattedSchoolDates);
+        var formattedSchoolUrl = HTMLonlineURL.replace("%data%", education.schools[i].url);
+        $("#education").append(formattedSchoolUrl);
 
 
-  var length=1;
-    for (var j = 0; j < length; j++) {
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
-        $("#education").append(formattedSchoolMajor);
+        var length = 1;
+        for (var j = 0; j < length; j++) {
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
+            $("#education").append(formattedSchoolMajor);
+        }
     }
-}
-for (var k = 0; k < education.onlineCourses.length; k++) {
-    $("#education").append(HTMLonlineClasses);
-    var formattedTittle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
-    $("#education").append(formattedTittle);
-    var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
-    $("#education").append(formattedSchool);
-    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[k].dates);
-    $("#education").append(formattedDates);
-    var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[k].url);
-    $("#education").append(formattedUrl);
+    for (var k = 0; k < education.onlineCourses.length; k++) {
+        $("#education").append(HTMLonlineClasses);
+        var formattedTittle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
+        $("#education").append(formattedTittle);
+        var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
+        $("#education").append(formattedSchool);
+        var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[k].dates);
+        $("#education").append(formattedDates);
+        var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[k].url);
+        $("#education").append(formattedUrl);
 
 
 
-}
+    }
 };
 education.display();
 
@@ -190,9 +190,9 @@ projects.display = function() {
         $(".project-entry:last").append(formattedDates);
 
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[k].description);
-        var length=1;
+        var length = 1;
         $(".project-entry:last").append(formattedDescription);
-        for (j = 0; j <length; j++) {
+        for (j = 0; j < length; j++) {
             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[k].images);
             $(".project-entry:last").append(formattedImage);
         }
